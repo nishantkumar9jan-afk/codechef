@@ -1,7 +1,12 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int X, Y, F;
+    cin >> X >> Y >> F;
 
+    cout << min(12 * X, 12 * Y + F) << endl;
+
+    return 0;
 }
