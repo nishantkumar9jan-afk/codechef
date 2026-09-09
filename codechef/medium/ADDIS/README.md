@@ -77,7 +77,7 @@ It can be shown that this is optimal.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T16:17:43.818Z  
+**Submitted:** 2026-09-09T16:28:53.236Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
