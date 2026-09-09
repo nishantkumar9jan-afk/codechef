@@ -74,17 +74,42 @@ So, no solution exists.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T16:15:42.820Z  
+**Submitted:** 2026-09-09T16:17:11.591Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int T;
+    cin >> T;
 
+    while (T--) {
+        int N;
+        string A, B;
+
+        cin >> N >> A >> B;
+
+        int aA = 0, aB = 0;
+
+        for (char c : A)
+            if (c == 'a') aA++;
+
+        for (char c : B)
+            if (c == 'a') aB++;
+
+        int bA = N - aA;
+        int bB = N - aB;
+
+        if (aA <= bB && bA <= aB)
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+    }
+
+    return 0;
 }
-
 ```
 
 ---
