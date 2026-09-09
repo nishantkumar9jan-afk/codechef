@@ -77,17 +77,42 @@ It can be shown that this is optimal.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-09T16:30:26.838Z  
+**Submitted:** 2026-09-09T16:29:28.780Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        unordered_map<long long, int> freq;
+
+        for (int i = 0; i < N; i++) {
+            long long x;
+            cin >> x;
+            freq[x]++;
+        }
+
+        int ans = 0;
+
+        for (auto &p : freq) {
+            ans = max(ans, (p.second + 1) / 2);
+        }
+
+        cout << ans << '\n';
+    }
+
+    return 0;
 }
-
 ```
 
 ---
