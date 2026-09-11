@@ -4,69 +4,62 @@
 
 ## Problem
 
-### Review syntax usage
+### Module on basic conditional statements
 
-Let us cover the 'conditional statements' syntax required for solving beginner's programming problems.
+We have reviewed programming problems on basic math in the previous module.
+We now incorporate conditional statements in our problem solving capabilities along with basic math.
 
-### Task
+Just a recap on what we covered in Learn C++ learning path regarding conditional statements.
 
-Write a program which does the following
+- "if" and "else" can be used together to create conditions.
+- The "else if" keyword means "if the previous conditions were not true, then try this condition"
+- The "else" keyword includes all cases which aren't included in the previous conditions.
+- Usual conditions used within if / else / else if statements Equals: a == b Not Equals: a != b Less than: a < b Less than or equal to: a <= b Greater than: a > b Greater than or equal to: a >= b
+- "and" and "or" statements help check multiple conditions. "&&" can also be used to mean "and". "||" can also be used to mean "or".
 
-- Accepts the count of test cases - $t$ Each test case has one integer $N$
-- Output the following for each test case If input is less than or equal to $100$, output 'Good' If input is greater than 100 but less than or equal to $200$, output 'Better' If the input is greater than 200, output 'Best'
-### Sample 1:
-Input
-Output
-
-```
-3
-100
-200
-201
-```
-
-```
-Good
-Better
-Best
-```
+Revise some of this syntax in the IDE.
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-11T08:11:46.868Z  
+**Submitted:** 2026-09-11T08:10:51.723Z  
 
 ```c_cpp
-// Solution as follows
+// Click on 'Submit' to first see the results
+// Click on 'Next to continue'
+// if-else statements 
 #include <bits/stdc++.h>
 
 using namespace std;
 int main()
 {
-    int t;
-    cin >> t;
-    while (t--)
+    int a = 13;
+    int b = 15;
+    if (a >= b)
     {
-        int N;
-        // Accept 1 integer as input.
-        cin >> N;
-        //Check if N is less than or equal to 100
-        if (N <= 100)
-        {
-            cout << "Good" << endl;
-        }
-        //2nd condition in the problem
-        else if (N > 100 && N <= 200)
-        {
-            cout << "Better" << endl;
-        }
-        //3rd condition in the problem
-        else
-        {
-            cout << "Best" << endl;
-        }
+        cout << a << " is greater than or equal to " << b << endl;
+    }
+    else
+    {
+        cout << a << " is lesser than " << b << endl;
+    }
+
+    // lets add the else if statement
+    a = 14;
+    b = 14;
+    if (a > b)
+    {
+        cout << a << " is greater than " << b << endl;
+    }
+    else if (a == b)
+    {
+        cout << a << " is equal to " << b << endl;
+    }
+    else
+    {
+        cout << a << " is lesser than " << b << endl;
     }
     return 0;
 }
