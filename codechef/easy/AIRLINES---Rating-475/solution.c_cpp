@@ -6,8 +6,11 @@ int main() {
 int t;
 cin>>t;
 while(t--){
-    int x,y;
-    cin>>x>>y;
-    cout<<min(x,y)<<endl;
+    int x,y,z;
+    cin>>x>>y>>z;
+   
+    int seat_sold = min(10*x,y);
+    int amount = seat_sold*z;
+    cout<<amount<<endl;
 }
 }
