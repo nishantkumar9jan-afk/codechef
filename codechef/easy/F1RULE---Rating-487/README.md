@@ -60,7 +60,7 @@ YES
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-12T07:59:33.783Z  
+**Submitted:** 2026-09-12T08:00:24.206Z  
 
 ```c_cpp
 #include <iostream>
@@ -72,8 +72,8 @@ int main() {
 	cin>>t;
 	while(t--){
 	    cin>>x>>y;
-	    a=x*1.07;
-	    if(a>=y){
+	    
+	    if(x*1.07>=y){
 	        cout<<"YES"<<endl;
 	    }
 	    else{
