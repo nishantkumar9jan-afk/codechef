@@ -7,8 +7,8 @@ int main() {
 	cin>>t;
 	while(t--){
 	    cin>>x>>y;
-	    a=x*1.07;
-	    if(a>=y){
+	    
+	    if(x*1.07>=y){
 	        cout<<"YES"<<endl;
 	    }
 	    else{
