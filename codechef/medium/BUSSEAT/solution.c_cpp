@@ -1,19 +1,7 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+	// your code goes here
 
-    while (T--) {
-        int N, K;
-        cin >> N >> K;
-
-        if (K <= N)
-            cout << 0 << "\n";
-        else
-            cout << 2 * (K - N) << "\n";
-    }
-
-    return 0;
 }
