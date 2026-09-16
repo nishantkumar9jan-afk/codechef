@@ -1,7 +1,21 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int T;
+    cin >> T;
 
+    while (T--) {
+        int N, K;
+        cin >> N >> K;
+
+        int rem = N - K;
+
+        if (rem == 1)
+            cout << "No\n";
+        else
+            cout << "Yes\n";
+    }
+
+    return 0;
 }
