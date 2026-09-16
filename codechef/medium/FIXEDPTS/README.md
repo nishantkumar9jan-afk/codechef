@@ -55,30 +55,17 @@ Yes
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-16T14:46:00.018Z  
+**Submitted:** 2026-09-16T14:43:08.340Z  
 
 ```c_cpp
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+	// your code goes here
 
-    while (T--) {
-        int N, K;
-        cin >> N >> K;
-
-        int rem = N - K;
-
-        if (rem == 1)
-            cout << "No\n";
-        else
-            cout << "Yes\n";
-    }
-
-    return 0;
 }
+
 ```
 
 ---
