@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t; // Read number of test cases
+    
+    while (t--) {
+        int x, y;
+        cin >> x >> y; // Read X and Y
+        
+        // Total coins = x * y
+        // Each bag costs 100 coins, so max bags = (x * y) / 100
+        int bags = (x * y) / 100;
+        
+        cout << bags << "\n";
+    }
+
+    return 0;
+}
