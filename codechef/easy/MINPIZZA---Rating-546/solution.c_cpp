@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, x;
+        cin >> n >> x;
+        
+        // Total slices needed is n * x. 
+        // Using integer math for ceil division: (total_slices + 3) / 4
+        int total_slices = n * x;
+        int pizzas = (total_slices + 3) / 4;
+        
+        cout << pizzas << "\n";
+    }
+    
+    return 0;
+}
