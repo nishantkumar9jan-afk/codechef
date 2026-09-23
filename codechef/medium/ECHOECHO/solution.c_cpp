@@ -1,7 +1,18 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
-	// your code goes here
-
+    string s;
+    cin >> s;
+    
+    // C++ strings are 0-indexed, so S1 is s[0], S2 is s[1], etc.
+    if (s[0] == s[2] && s[1] == s[3]) {
+        cout << "Yes\n";
+    } else {
+        cout << "No\n";
+    }
+    
+    return 0;
 }
