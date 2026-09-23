@@ -76,17 +76,58 @@ $5$ is the minimum cost needed to achieve this.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-23T15:47:11.015Z  
+**Submitted:** 2026-09-23T15:51:24.474Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-	// your code goes here
-
+    int t;
+    cin >> t;
+    
+    while (t > 0) {
+        int n, k;
+        cin >> n >> k;
+        
+        int c[105]; 
+        for (int i = 1; i <= n; i++) {
+            cin >> c[i];
+        }
+        
+        int ans = -1; 
+        
+        
+        for (int i = 1; i <= n; i++) {
+            for (int j = i + 1; j <= n; j++) {
+                
+                
+                bool left_cover = (i - k <= 1);
+                
+               
+                bool right_cover = (j + k >= n);
+                
+              
+                bool middle_cover = (i + k + 1 >= j - k);
+                
+               
+                if (left_cover && right_cover && middle_cover) {
+                    int current_cost = c[i] + c[j];
+                    
+                    
+                    if (ans == -1 || current_cost < ans) {
+                        ans = current_cost;
+                    }
+                }
+            }
+        }
+        
+        cout << ans << endl; 
+        t--;
+    }
+    
+    return 0;
 }
-
 ```
 
 ---
