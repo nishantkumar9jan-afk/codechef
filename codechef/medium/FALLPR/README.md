@@ -77,17 +77,76 @@ Thus, it's impossible to make the array  *good*  after a single deletion.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-23T15:53:03.571Z  
+**Submitted:** 2026-09-23T15:55:10.415Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+
 using namespace std;
 
-int main() {
-	// your code goes here
+void solve() {
+    int n;
+    cin >> n;
+    vector<long long> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
 
+    long long sum = 0;
+    int fail_idx = -1;
+    
+  
+    for (int i = 0; i < n; i++) {
+        sum += a[i];
+        if (sum < 0) {
+            fail_idx = i;
+            break;
+        }
+    }
+
+    if (fail_idx == -1) {
+        cout << "YES\n";
+        return;
+    }
+
+   
+    long long min_val = a[0];
+    int min_idx = 0;
+    for (int i = 1; i <= fail_idx; i++) {
+        if (a[i] < min_val) {
+            min_val = a[i];
+            min_idx = i;
+        }
+    }
+
+   
+    sum = 0;
+    for (int i = 0; i < n; i++) {
+        if (i == min_idx) continue; 
+        
+        sum += a[i];
+        if (sum < 0) {
+          
+            cout << "NO\n";
+            return;
+        }
+    }
+
+    cout << "YES\n";
 }
 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
+}
 ```
 
 ---
