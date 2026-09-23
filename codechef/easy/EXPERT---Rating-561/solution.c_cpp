@@ -8,7 +8,7 @@ cin>>t;
 while(t--){
     int x,y;
     cin>>x>>y;
-    if (x/2<=y){
+    if (x<=y*2){
         cout<<"yes"<<endl;
     } else
         cout<<"no"<<endl;
