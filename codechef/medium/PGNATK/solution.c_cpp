@@ -1,7 +1,22 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int t;
+    cin >> t;
+    
+    while (t > 0) {
+        long long n, k;
+        cin >> n >> k; 
+        long long interruptions = (n - 1) / (k - 1);
+        
 
+        long long total_time = n + interruptions;
+        
+        cout << total_time << endl; 
+        
+        t--;
+    }
+    
+    return 0;
 }
