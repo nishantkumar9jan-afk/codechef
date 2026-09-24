@@ -48,27 +48,24 @@ No
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-24T16:32:12.603Z  
+**Submitted:** 2026-09-24T16:33:48.973Z  
 
 ```c_cpp
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
-	// your code goes here
-int t;
-cin>>t;
-while(t--){
-    int x;
-    cin>>x;
-    if(x+1<10){
-        cout<<"yes"<<endl;
-        
-    } else 
-       cout<<"no"<<endl;
+	int T,X;
+	cin>>T;
+	while(T--)
+	{
+	    cin>>X;
+	    if((X+3)<=10)
+	    cout<<"YES"<<endl;
+	    else cout<<"NO"<<endl;
+	}
+	return 0;
 }
-}
-
 ```
 
 ---
