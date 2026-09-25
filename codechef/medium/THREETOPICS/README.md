@@ -65,7 +65,7 @@ Chef had prepared the topics: $4, 6, 8$. Chef gets to speak on the topic: $5$. S
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-25T06:25:07.299Z  
+**Submitted:** 2026-09-25T06:25:15.682Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
