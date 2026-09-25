@@ -65,7 +65,7 @@ Chef had prepared the topics: $4, 6, 8$. Chef gets to speak on the topic: $5$. S
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-25T06:25:15.682Z  
+**Submitted:** 2026-09-25T06:25:40.280Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -75,7 +75,7 @@ int main() {
 	// your code goes here
 int a,b,c,d;
 cin>>a>>b>>c>>d;
-if(a=d||b=d||c=d){
+if(a==d||b==d||c==d){
     cout<<"yes";
 } else
    cout<<"no";
