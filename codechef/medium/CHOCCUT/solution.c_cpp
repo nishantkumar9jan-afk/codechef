@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    
+    // If either dimension is even, it can be cut into 2 equal pieces
+    if (n % 2 == 0 || m % 2 == 0) {
+        cout << "Yes\n";
+    } else {
+        cout << "No\n";
+    }
+}
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
