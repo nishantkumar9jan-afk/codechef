@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int B, H, C;
+    if (cin >> B >> H >> C) {
+        // Calculate the limiting factor between bread pairs and total fillings
+        int max_sandwiches = min(B / 2, H + C);
+        cout << max_sandwiches << "\n";
+    }
+
+    return 0;
+}
