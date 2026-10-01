@@ -58,7 +58,7 @@ Qualify
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-01T06:15:22.638Z  
+**Submitted:** 2026-10-01T06:18:04.053Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -66,16 +66,7 @@ using namespace std;
 
 int main() {
 	// your code goes here
-int t;
-cin>>t;
-while(t--){
-    int x;
-    cin>>x;
-    if(x%4==0){
-        cout<<"good"<<endl;
-    } else
-        cout<<"Not good"<<endl;
-}
+
 }
 
 ```
