@@ -60,7 +60,7 @@ Therefore he can accept any of the deal.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-09-29T17:52:20.111Z  
+**Submitted:** 2026-10-01T19:10:41.218Z  
 
 ```c_cpp
 #include <iostream>
