@@ -58,17 +58,36 @@ Qualify
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-01T16:52:36.530Z  
+**Submitted:** 2026-10-01T16:52:39.728Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
+    int t;
+    cin >> t;
+    while (t--) {
+        int x, a, b;
+        cin >> x >> a >> b;
+
+        // Calculate total points: each easy problem is 1 point, each hard is 2 points
+        int total_points = a + (2 * b);
+
+        // Check if Chef qualifies
+        if (total_points >= x) {
+            cout << "Qualify\n";
+        } else {
+            cout << "NotQualify\n";
+        }
+    }
+
+    return 0;
 }
-
 ```
 
 ---
