@@ -2,20 +2,25 @@
 using namespace std;
 
 int main() {
-	// your code goes here
- int t;
- cin>>t;
- while(t--){
-     int n,x;
-     cin>>n>>x;
-     int count = 0;
-     for(int i=0; i<n;i++){
-         int age;
-         cin>>age;
-         if(age>=x){
-             count++;
-         }
-     }
-     cout<<count<<endl;
- }
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while(t--) {
+        int n, x;
+        cin >> n >> x;
+        
+        int count = 0;
+        for(int i = 0; i < n; i++) {
+            int age;
+            cin >> age;
+            if(age >= x) {
+                count++;
+            }
+        }
+        cout << count << "\n";
+    }
+    return 0;
 }
