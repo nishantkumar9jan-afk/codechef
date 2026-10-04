@@ -62,31 +62,35 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-03T06:05:38.772Z  
+**Submitted:** 2026-10-04T08:14:49.732Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
- int t;
- cin>>t;
- while(t--){
-     int n,x;
-     cin>>n>>x;
-     int count = 0;
-     for(int i=0; i<n;i++){
-         int age;
-         cin>>age;
-         if(age>=x){
-             count++;
-         }
-     }
-     cout<<count<<endl;
- }
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while(t--) {
+        int n, x;
+        cin >> n >> x;
+        
+        int count = 0;
+        for(int i = 0; i < n; i++) {
+            int age;
+            cin >> age;
+            if(age >= x) {
+                count++;
+            }
+        }
+        cout << count << "\n";
+    }
+    return 0;
 }
-
 ```
 
 ---
