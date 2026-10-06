@@ -8,6 +8,6 @@ cin>>t;
 while(t--){
     int x,y;
     cin>>x>>y;
-    cout<<(x-y)+(y/2);
+    cout<<(Y / 2) + (X - Y);
 }
 }
