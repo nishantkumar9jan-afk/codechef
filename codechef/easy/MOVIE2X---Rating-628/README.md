@@ -70,7 +70,7 @@ In total, Chef spends $12 + 26 = 38$ minutes watching the entire movie.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-06T16:24:42.418Z  
+**Submitted:** 2026-10-06T16:25:05.887Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -83,7 +83,7 @@ cin>>t;
 while(t--){
     int x,y;
     cin>>x>>y;
-    cout<<(x-y)+(y/2);
+    cout<<(y / 2) + (x - y);
 }
 }
 
