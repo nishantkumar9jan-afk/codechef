@@ -1,12 +1,13 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int X, Y;
-    cin >> X >> Y;
-
-    int total = (Y / 2) + (X - Y);
-    cout << total << endl;
-
-    return 0;
+	// your code goes here
+int t;
+cin>>t;
+while(t--){
+    int x,y;
+    cin>>x>>y;
+    cout<<(Y / 2) + (X - Y);
+}
 }
