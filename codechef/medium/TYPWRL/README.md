@@ -62,17 +62,44 @@ abcdefghijklmnopqrstuvwxyz
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T15:52:12.598Z  
+**Submitted:** 2026-10-07T15:52:52.958Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int T;
+    cin >> T;
 
+    while (T--) {
+        int N, M;
+        cin >> N >> M;
+
+        string S, L;
+        cin >> S >> L;
+
+        set<char> left(L.begin(), L.end());
+
+        int ans = 1, cnt = 1;
+
+        for (int i = 1; i < N; i++) {
+            bool prev = left.count(S[i - 1]);
+            bool curr = left.count(S[i]);
+
+            if (prev == curr)
+                cnt++;
+            else
+                cnt = 1;
+
+            ans = max(ans, cnt);
+        }
+
+        cout << ans << "\n";
+    }
+
+    return 0;
 }
-
 ```
 
 ---
