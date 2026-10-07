@@ -72,17 +72,37 @@ NO
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-07T16:04:06.008Z  
+**Submitted:** 2026-10-07T16:05:44.549Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+   
 
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        string A, B;
+
+        cin >> N;
+        cin >> A;
+        cin >> B;
+
+        int onesA = count(A.begin(), A.end(), '1');
+        int onesB = count(B.begin(), B.end(), '1');
+
+        if ((onesA % 2) == (onesB % 2))
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+    }
+
+    return 0;
 }
-
 ```
 
 ---
