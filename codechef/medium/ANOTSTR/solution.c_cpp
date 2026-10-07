@@ -2,6 +2,27 @@
 using namespace std;
 
 int main() {
-	// your code goes here
+   
 
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N;
+        string A, B;
+
+        cin >> N;
+        cin >> A;
+        cin >> B;
+
+        int onesA = count(A.begin(), A.end(), '1');
+        int onesB = count(B.begin(), B.end(), '1');
+
+        if ((onesA % 2) == (onesB % 2))
+            cout << "YES\n";
+        else
+            cout << "NO\n";
+    }
+
+    return 0;
 }
