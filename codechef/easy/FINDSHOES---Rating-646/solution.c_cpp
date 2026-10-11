@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    
+    // Total shoes to buy = N right shoes + max(0, N - M) left shoes
+    int total_shoes = n + max(0, n - m);
+    cout << total_shoes << "\n";
+}
+
+int main() {
+  
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
