@@ -4,14 +4,7 @@ using namespace std;
 
 const int MOD = 998244353;
 
-int main() {
-ios::sync_with_stdio(false);
-cin.tie(nullptr);
-
-int T;
-cin >> T;
-
-while (T--) {
+void solve() {
     int N;
     cin >> N;
 
@@ -20,20 +13,33 @@ while (T--) {
         cin >> P[i];
     }
 
-    vector<int> dp(N + 1, 0);
-    dp[0] = 1;
+    vector<vector<int>> dp(N + 1, vector<int>(N + 1, 0));
+    dp[0][0] = 1;
 
     for (int i = 0; i < N; i++) {
-        for (int j = i; j >= 0; j--) {
-            dp[j + 1] = (dp[j + 1] + dp[j]) % MOD;
+        for (int j = 0; j <= i; j++) {
+            if (dp[i][j] == 0) continue;
+
+            dp[i + 1][j] = (dp[i + 1][j] + dp[i][j]) % MOD;
+            dp[i + 1][j + 1] = (dp[i + 1][j + 1] + dp[i][j]) % MOD;
         }
     }
 
     for (int i = 0; i <= N; i++) {
-        cout << dp[i] << (i == N ? '\n' : ' ');
+        cout << dp[N][i] << (i == N ? '\n' : ' ');
     }
 }
 
-return 0;
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
+    int T;
+    cin >> T;
+
+    while (T--) {
+        solve();
+    }
+
+    return 0;
 }
