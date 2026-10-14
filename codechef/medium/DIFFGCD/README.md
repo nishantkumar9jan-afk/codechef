@@ -54,7 +54,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:04:43.503Z  
+**Submitted:** 2026-10-14T16:05:21.923Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -63,8 +63,8 @@ using namespace std;
 void solve() {
     long long n;
     cin >> n;
-
     
+
     long long total_pairs = 0;
     for (long long g = 1; g < n; g++) {
         total_pairs += (n - g) / g;
