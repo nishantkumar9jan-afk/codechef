@@ -1,7 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-	// your code goes here
+void solve() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    
+    sort(a.begin(), a.end());
+    
+    // We can change exactly one element. To minimize max(A) - min(A),
+    // we should either change the smallest element to match the second smallest,
+    // or change the largest element to match the second largest.
+    // Thus, the possible minimum differences are:
+    // 1. a[n-1] - a[1]  (by changing a[0] to match a[1])
+    // 2. a[n-2] - a[0]  (by changing a[n-1] to match a[n-2])
+    
+    int ans = min(a[n - 1] - a[1], a[n - 2] - a[0]);
+    cout << ans << "\n";
+}
 
+int main() {
+ 
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
 }
