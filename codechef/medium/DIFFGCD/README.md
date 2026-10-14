@@ -54,11 +54,26 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:07:55.033Z  
+**Submitted:** 2026-10-14T16:11:11.146Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
+
+using ll = long long;
+
+ll solve(ll N) {
+ll ans = 0;
+
+```
+for (ll d = 1; d <= N / 2; d++) {
+    ans += N / d - 1;
+}
+
+return ans;
+```
+
+}
 
 int main() {
 ios::sync_with_stdio(false);
@@ -69,16 +84,9 @@ int T;
 cin >> T;
 
 while (T--) {
-    long long N;
+    ll N;
     cin >> N;
-
-    long long ans = 0;
-
-    for (long long X = 1; X <= N; X++) {
-        ans += (N / X - 1);
-    }
-
-    cout << ans << '\n';
+    cout << solve(N) << '\n';
 }
 
 return 0;
