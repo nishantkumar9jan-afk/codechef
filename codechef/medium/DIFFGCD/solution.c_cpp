@@ -4,8 +4,8 @@ using namespace std;
 void solve() {
     long long n;
     cin >> n;
-
     
+
     long long total_pairs = 0;
     for (long long g = 1; g < n; g++) {
         total_pairs += (n - g) / g;
