@@ -6,25 +6,36 @@ void solve() {
     cin >> N;
 
     vector<int> P(N + 1);
+    vector<int> pref(N + 1, 0);
+    vector<int> sum(N + 1);
+
     int fixed = 0;
 
     for (int i = 1; i <= N; i++) {
         cin >> P[i];
-        if (P[i] == i) fixed++;
+        sum[i] = i + P[i];
+
+        if (P[i] == i) {
+            fixed++;
+        }
+
+        pref[i] = pref[i - 1] + (P[i] == i);
     }
 
     int ans = fixed;
 
     for (int L = 1; L <= N; L++) {
+        vector<int> freq(2 * N + 2, 0);
+
         for (int R = L; R <= N; R++) {
-            int cnt = fixed;
+            freq[sum[R]]++;
 
-            for (int i = L; i <= R; i++) {
-                if (P[i] == i) cnt--;
-                if (P[i] == L + R - i) cnt++;
-            }
+            int S = L + R;
+            int insideFixed = pref[R] - pref[L - 1];
 
-            ans = max(ans, cnt);
+            int current = fixed - insideFixed + freq[S];
+
+            ans = max(ans, current);
         }
     }
 
