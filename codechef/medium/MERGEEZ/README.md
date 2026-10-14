@@ -72,40 +72,13 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:19:19.857Z  
+**Submitted:** 2026-10-14T16:19:48.124Z  
 
 ```c_cpp
-
 #include <bits/stdc++.h>
 using namespace std;
 
 const int MOD = 998244353;
-
-void solve() {
-    int N;
-    cin >> N;
-
-    vector<int> P(N);
-    for (int i = 0; i < N; i++) {
-        cin >> P[i];
-    }
-
-    vector<vector<int>> dp(N + 1, vector<int>(N + 1, 0));
-    dp[0][0] = 1;
-
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j <= i; j++) {
-            if (dp[i][j] == 0) continue;
-
-            dp[i + 1][j] = (dp[i + 1][j] + dp[i][j]) % MOD;
-            dp[i + 1][j + 1] = (dp[i + 1][j + 1] + dp[i][j]) % MOD;
-        }
-    }
-
-    for (int i = 0; i <= N; i++) {
-        cout << dp[N][i] << (i == N ? '\n' : ' ');
-    }
-}
 
 int main() {
     ios::sync_with_stdio(false);
@@ -115,7 +88,46 @@ int main() {
     cin >> T;
 
     while (T--) {
-        solve();
+        int N;
+        cin >> N;
+
+        vector<int> P(N);
+        for (int i = 0; i < N; i++) {
+            cin >> P[i];
+        }
+
+        vector<int> blocks;
+        int mx = 0, last = 0;
+
+        for (int i = 0; i < N; i++) {
+            if (P[i] > mx) {
+                if (i > 0) {
+                    blocks.push_back(i - last);
+                }
+
+                last = i;
+                mx = P[i];
+            }
+        }
+
+        blocks.push_back(N - last);
+
+        vector<int> dp(N + 1, 0);
+        dp[0] = 1;
+
+        int total = 0;
+
+        for (int len : blocks) {
+            for (int j = total + len; j >= len; j--) {
+                dp[j] = (dp[j] + dp[j - len]) % MOD;
+            }
+
+            total += len;
+        }
+
+        for (int i = 0; i <= N; i++) {
+            cout << dp[i] << (i == N ? '\n' : ' ');
+        }
     }
 
     return 0;
