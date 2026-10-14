@@ -53,7 +53,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:02:07.550Z  
+**Submitted:** 2026-10-14T16:02:15.390Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -69,13 +69,7 @@ void solve() {
     
     sort(a.begin(), a.end());
     
-    // We can change exactly one element. To minimize max(A) - min(A),
-    // we should either change the smallest element to match the second smallest,
-    // or change the largest element to match the second largest.
-    // Thus, the possible minimum differences are:
-    // 1. a[n-1] - a[1]  (by changing a[0] to match a[1])
-    // 2. a[n-2] - a[0]  (by changing a[n-1] to match a[n-2])
-    
+
     int ans = min(a[n - 1] - a[1], a[n - 2] - a[0]);
     cout << ans << "\n";
 }
