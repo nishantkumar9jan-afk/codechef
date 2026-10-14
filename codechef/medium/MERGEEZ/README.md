@@ -72,7 +72,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:13:58.664Z  
+**Submitted:** 2026-10-14T16:13:58.157Z  
 
 ```c_cpp
 
@@ -81,7 +81,14 @@ using namespace std;
 
 const int MOD = 998244353;
 
-void solve() {
+int main() {
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+
+int T;
+cin >> T;
+
+while (T--) {
     int N;
     cin >> N;
 
@@ -90,35 +97,22 @@ void solve() {
         cin >> P[i];
     }
 
-    vector<vector<int>> dp(N + 1, vector<int>(N + 1, 0));
-    dp[0][0] = 1;
+    vector<int> dp(N + 1, 0);
+    dp[0] = 1;
 
     for (int i = 0; i < N; i++) {
-        for (int j = 0; j <= i; j++) {
-            if (dp[i][j] == 0) continue;
-
-            dp[i + 1][j] = (dp[i + 1][j] + dp[i][j]) % MOD;
-            dp[i + 1][j + 1] = (dp[i + 1][j + 1] + dp[i][j]) % MOD;
+        for (int j = i; j >= 0; j--) {
+            dp[j + 1] = (dp[j + 1] + dp[j]) % MOD;
         }
     }
 
     for (int i = 0; i <= N; i++) {
-        cout << dp[N][i] << (i == N ? '\n' : ' ');
+        cout << dp[i] << (i == N ? '\n' : ' ');
     }
 }
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+return 0;
 
-    int T;
-    cin >> T;
-
-    while (T--) {
-        solve();
-    }
-
-    return 0;
 }
 ```
 
