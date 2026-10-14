@@ -4,80 +4,36 @@ using namespace std;
 
 const int MOD = 998244353;
 
-void solve() {
-    int n;
-    cin >> n;
-    vector<int> p(n);
-    for (int i = 0; i < n; i++) {
-        cin >> p[i];
+int main() {
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+
+int T;
+cin >> T;
+
+while (T--) {
+    int N;
+    cin >> N;
+
+    vector<int> P(N);
+    for (int i = 0; i < N; i++) {
+        cin >> P[i];
     }
-    
-   
-    
-    vector<long long> ans(n + 1, 0);
-    // Base case for single element
-    dp[0] = 1; // means last was in B or empty? Let's track (i, last_array)
-    
-    // Let's use a clear DP state: dp[i][0] -> length i for A, last added to A
-    // dp[i][1] -> length i for A, last added to B
-    vector<long long> dpA(n + 1, 0), dpB(n + 1, 0);
-    if (n > 0) {
-        dpA[1] = 1; // p[0] can start A
-        dpB[0] = 1; // or start B (so length of A is 0)
-    }
-    
-    for (int k = 1; k < n; k++) {
-        vector<long long> ndpA(n + 1, 0), ndpB(n + 1, 0);
-        bool greater = (p[k] > p[k - 1]);
-        
-        for (int i = 0; i <= k; i++) {
-            // From A last
-            if (dpA[i]) {
-                // Extend A
-                ndpA[i + 1] = (ndpA[i + 1] + dpA[i]) % MOD;
-                // Extend B (switch to B)
-                if (greater) {
-                    ndpB[i] = (ndpB[i] + dpA[i]) % MOD;
-                } else {
-                    // If p[k] < p[k-1], switching is invalid if we follow strict merge where smaller comes first,
-                    // wait! If p[k] < p[k-1], can it switch? 
-                    // If we switch to B, B's current element would be p[k], and A's last was p[k-1]. 
-                    // Since p[k] < p[k-1], the merge algorithm would have picked p[k] from B *before* p[k-1] from A!
-                    // Thus, if p[k] < p[k-1], we CANNOT have last been in A and now switch to B.
-                    // So switching is only allowed when p[k] > p[k-1].
-                }
-            }
-            // From B last
-            if (dpB[i]) {
-                // Extend B
-                ndpB[i] = (ndpB[i] + dpB[i]) % MOD;
-                // Extend A (switch to A)
-                if (greater) {
-                    ndpA[i + 1] = (ndpA[i + 1] + dpB[i]) % MOD;
-                }
-            }
+
+    vector<int> dp(N + 1, 0);
+    dp[0] = 1;
+
+    for (int i = 0; i < N; i++) {
+        for (int j = i; j >= 0; j--) {
+            dp[j + 1] = (dp[j + 1] + dp[j]) % MOD;
         }
-        dpA = move(ndpA);
-        dpB = move(ndpB);
     }
-    
-    for (int i = 0; i <= n; i++) {
-        ans[i] = (dpA[i] + dpB[i]) % MOD;
+
+    for (int i = 0; i <= N; i++) {
+        cout << dp[i] << (i == N ? '\n' : ' ');
     }
-    
-    for (int i = 0; i <= n; i++) {
-        cout << ans[i] << (i == n ? "" : " ");
-    }
-    cout << "\n";
 }
 
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t;
-    cin >> t;
-    while (t--) {
-        solve();
-    }
-    return 0;
+return 0;
+
 }
