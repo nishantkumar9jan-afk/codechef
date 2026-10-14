@@ -1,36 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using ll = long long;
-
-ll solve(ll N) {
-ll ans = 0;
-
-```
-for (ll d = 1; d <= N / 2; d++) {
-    ans += N / d - 1;
-}
-
-return ans;
-```
-
+void solve() {
+    long long n;
+    cin >> n;
+    
+    // We want to count pairs (X, Y) such that 1 <= X < Y <= N and gcd(X, Y) = Y - X.
+    // Let g = Y - X. Then Y = X + g.
+    // The condition gcd(X, X + g) = g is equivalent to gcd(X, g) = g,
+    // which means g must divide X.
+    // Thus, X must be a multiple of g: X = k * g for some integer k >= 1.
+    // Since Y = X + g <= N, we have k * g + g <= N => (k + 1) * g <= N => k <= N / g - 1.
+    // Since k >= 1, the number of valid values of k for a fixed g is max(0LL, N / g - 1).
+    // Or equivalently, X can be g, 2g, 3g, ..., such that X + g <= N, which is (N - g) / g.
+    
+    long long total_pairs = 0;
+    for (long long g = 1; g * g < n; g++) {
+        total_pairs += (n - g) / g;
+    }
+    
+    cout << total_pairs << "\n";
 }
 
 int main() {
-ios::sync_with_stdio(false);
-cin.tie(nullptr);
-
-```
-int T;
-cin >> T;
-
-while (T--) {
-    ll N;
-    cin >> N;
-    cout << solve(N) << '\n';
-}
-
-return 0;
-```
-
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    return 0;
 }
