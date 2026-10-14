@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int x, y;
+    cin >> x >> y;
+    
+   int diff = y - x;
+    int wins = (diff + 7) / 8;
+    
+    cout << wins << "\n";
+}
+
+int main() {
+  
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
