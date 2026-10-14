@@ -54,34 +54,51 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-14T16:05:40.922Z  
+**Submitted:** 2026-10-14T16:07:31.926Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve() {
-    long long n;
-    cin >> n;
-    
+using ll = long long;
 
-    long long total_pairs = 0;
-    for (long long g = 1; g < n; g++) {
-        total_pairs += (n - g) / g;
-    }
-    
-    cout << total_pairs << "\n";
+ll solve(ll N) {
+ll M = N / 2;
+ll sum = 0;
+
+```
+for (ll l = 1, r; l <= M; l = r + 1) {
+    ll q = N / l;
+    r = min(M, N / q);
+
+    sum += q * (r - l + 1);
+}
+
+return sum - M;
+```
+
 }
 
 int main() {
-    
-    int t;
-    cin >> t;
-    while (t--) {
-        solve();
-    }
-    return 0;
+ios::sync_with_stdio(false);
+cin.tie(nullptr);
+
+```
+int T;
+cin >> T;
+
+while (T--) {
+    ll N;
+    cin >> N;
+
+    cout << solve(N) << '\n';
 }
+
+return 0;
+```
+
+}
+
 ```
 
 ---
