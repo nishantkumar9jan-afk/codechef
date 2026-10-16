@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n, x, k;
+    cin >> n >> x >> k;
+    
+    // The number of bottles we can fill with k water is k / x.
+    // However, we cannot fill more than n bottles, so we take the minimum.
+    int ans = min(n, k / x);
+    
+    cout << ans << "\n";
+}
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    cin >> t;
+    while (t--) {
+        solve();
+    }
+    
+    return 0;
+}
