@@ -31,7 +31,7 @@ For each test case, output the string containing $N$ characters - sequence of nu
 - $S$ contains A, T, C, and G only
 ### Sample 1:
 Input
-Output
+
 
 ```
 4
