@@ -28,7 +28,7 @@ For each test case, output the string containing $N$ characters - sequence of nu
 ### Constraints
 - $1 \leq T \leq 100$
 - $1 \leq N \leq 100$
-- $S$ contains A, T, C, and G only
+- $S$ contains A, T, C, and G
 ### Sample 1:
 Input
 
