@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void solve() {
+    int n, m;
+    cin >> n >> m;
+    
+    // Each friend must get an equal and even number of candies.
+    // This means total candies 'n' must be divisible by 'm * 2'.
+    int temp = m * 2;
+    if (n % temp == 0) {
+        cout << "Yes\n";
+    } else {
+        cout << "No\n";
+    }
+}
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int test;
+    cin >> test;
+    while (test--) {
+        solve();
+    }
+    return 0;
+}
