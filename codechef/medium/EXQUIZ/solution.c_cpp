@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+
+    while (T--) {
+        int N, S;
+        cin >> N >> S;
+
+        int ans = -1;
+
+        for (int k = 0; k <= N; k++) {
+            for (int c = 0; c <= k; c++) {
+                int w = k - c;
+                if (4 * c - w == S) {
+                    ans = k;
+                    break;
+                }
+            }
+            if (ans != -1) break;
+        }
+
+        cout << ans << '\n';
+    }
+
+    return 0;
+}
