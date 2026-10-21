@@ -61,7 +61,7 @@ Test case $1$: Inviting the groups with $1$ and $2$ people gives $3$ people and 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-21T15:39:36.059Z  
+**Submitted:** 2026-10-21T15:40:33.053Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -89,11 +89,11 @@ while (T--) {
     int groups = 0;
 
     for (int i = 0; i < N; i++) {
-        long long newPeople = people + A[i];
-        long long handshakes = newPeople * (newPeople - 1) / 2;
+        long long total = people + A[i];
+        long long handshakes = total * (total - 1) / 2;
 
         if (handshakes <= M) {
-            people = newPeople;
+            people = total;
             groups++;
         } else {
             break;
@@ -107,7 +107,6 @@ return 0;
 ```
 
 }
-
 
 ```
 
