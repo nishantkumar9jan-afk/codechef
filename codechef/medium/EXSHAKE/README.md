@@ -61,53 +61,49 @@ Test case $1$: Inviting the groups with $1$ and $2$ people gives $3$ people and 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-21T15:41:11.667Z  
+**Submitted:** 2026-10-21T15:41:41.268Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-int T;
-cin >> T;
+    int T;
+    cin >> T;
 
-```
-while (T--) {
-    int N;
-    long long M;
-    cin >> N >> M;
+    while (T--) {
+        int N;
+        long long M;
+        cin >> N >> M;
 
-    vector<int> A(N);
+        vector<int> A(N);
 
-    for (int i = 0; i < N; i++) {
-        cin >> A[i];
-    }
-
-    sort(A.begin(), A.end());
-
-    long long people = 0;
-    int groups = 0;
-
-    for (int i = 0; i < N; i++) {
-        long long total = people + A[i];
-        long long handshakes = total * (total - 1) / 2;
-
-        if (handshakes <= M) {
-            people = total;
-            groups++;
-        } else {
-            break;
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];
         }
+
+        sort(A.begin(), A.end());
+
+        long long people = 0;
+        int groups = 0;
+
+        for (int i = 0; i < N; i++) {
+            long long total = people + A[i];
+            long long handshakes = total * (total - 1) / 2;
+
+            if (handshakes <= M) {
+                people = total;
+                groups++;
+            } else {
+                break;
+            }
+        }
+
+        cout << groups << '\n';
     }
 
-    cout << groups << '\n';
+    return 0;
 }
-
-return 0;
-```
-
-}
-
 ```
 
 ---
