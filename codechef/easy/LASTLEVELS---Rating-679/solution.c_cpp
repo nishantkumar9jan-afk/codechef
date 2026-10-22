@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int x, y, z;
+        cin >> x >> y >> z;
+        
+        // Total time spent playing levels
+        int play_time = x * y;
+        
+        // Number of breaks (Chef takes a break after every 3 levels, but not at the very end)
+        int breaks = (x - 1) / 3;
+        
+        // Total time including breaks
+        int total_time = play_time + (breaks * z);
+        
+        cout << total_time << endl;
+    }
+    return 0;
+}
