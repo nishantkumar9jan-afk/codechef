@@ -1,22 +1,24 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    while (T--) {
-        int A, B;
-        cin >> A >> B;
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k, m;
+        cin >> n >> k >> m;
         
-        // Calculate the third number needed to make the sum 21
-        int C = 21 - A - B;
-
-        // Check if C is within the valid range [1, 10]
-        if (C >= 1 && C <= 10)
-            cout << C << endl;
-        else
-            cout << -1 << endl;
+        // Capacity of a single bag
+        int bag_capacity = k * m;
+        
+        // Calculate minimum bags needed
+        int bags = (n + bag_capacity - 1) / bag_capacity;
+        
+        cout << bags << "\n";
     }
 
     return 0;
