@@ -4,74 +4,80 @@
 
 ## Problem
 
-### Blackjack
+### Fill Candies
 
-Chef is playing a variant of Blackjack, where $3$ numbers are drawn and each number lies between $1$ and $10$ (with both $1$ and $10$ inclusive). Chef wins the game when the sum of these $3$ numbers is exactly $21$.
-
-Given the first two numbers $A$ and $B$, that have been drawn by Chef, what should be $3$-rd number that should be drawn by the Chef in order to win the game?
-
-Note that it is possible that Chef cannot win the game, no matter what is the $3$-rd number. In such cases, report $-1$ as the answer.
+Chef received $N$ candies on his birthday. He wants to put these candies in some bags. A bag has $K$ pockets and each pocket can hold at most $M$ candies. Find the  **minimum**  number of bags Chef needs so that he can put every candy into a bag.
 
 ### Input Format
-- The first line will contain an integer $T$ - number of test cases. Then the test cases follow.
-- The first and only line of each test case contains two integers $A$ and $B$ - the first and second number drawn by the Chef.
+- The first line of input will contain a single integer $T$, denoting the number of test cases.
+- Each test case consists of a single line containing three space-separated integers $N, K, M$.
 ### Output Format
 
-For each testcase, output the $3$-rd number that should be drawn by the Chef in order to win the game. Output $-1$ if it is not possible for the Chef to win the game.
+For each test case, print the minimum number of bags Chef needs so that he can put all the candies in one of the bags.
 
 ### Constraints
-- $1 \leq T \leq 100$
-- $1 \leq A, B \leq 10$
+- $1 \leq T \leq 1000$
+- $1 \leq N, K, M \leq 100$
 ### Sample 1:
 Input
 Output
 
 ```
-3
-1 10
-1 5
-4 9
+4
+6 2 3
+3 1 2
+8 4 1
+25 4 2
+
 ```
 
 ```
-10
--1
-8
+1
+2
+2
+4
+
 ```
 
 ### Explanation:
 
- **Test case $1$** : The first two numbers are $1$ and $10$. If the third number will be $10$, the resulting sum will be $1 + 10 + 10 = 21$. So Chef will win the game if the third number is $10$.
+ **Test case $1$:**  Chef puts $3$ candies in the first pocket of a bag and the remaining $3$ candies in the second pocket. Thus Chef will need only one bag.
 
- **Test case $2$** : The first two numbers are $1$ and $5$. There is no number between $1$ and $10$, that can make the resulting sum $21$. Hence, the answer will be $-1$ in this test case.
+ **Test case $2$:**  Chef puts $2$ candies in the only pocket of the first bag and the remaining $1$ candy in the only pocket of the second bag. Thus Chef will need two bags.
+
+ **Test case $3$:**  Chef puts $4$ candies in the first bag, one candy in each of the $4$ pockets and the same for the second bag. Thus Chef will need two bags.
+
+ **Test case $4$:**  Chef puts $2$ candies in each of the $4$ pockets of three bags, one candy in a pocket of the fourth bag.
 
 ## Solution
 
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-24T13:36:46.779Z  
+**Submitted:** 2026-10-25T03:37:44.828Z  
 
 ```c_cpp
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    int T;
-    cin >> T;
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    while (T--) {
-        int A, B;
-        cin >> A >> B;
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k, m;
+        cin >> n >> k >> m;
         
-        // Calculate the third number needed to make the sum 21
-        int C = 21 - A - B;
-
-        // Check if C is within the valid range [1, 10]
-        if (C >= 1 && C <= 10)
-            cout << C << endl;
-        else
-            cout << -1 << endl;
+        // Capacity of a single bag
+        int bag_capacity = k * m;
+        
+        // Calculate minimum bags needed
+        int bags = (n + bag_capacity - 1) / bag_capacity;
+        
+        cout << bags << "\n";
     }
 
     return 0;
