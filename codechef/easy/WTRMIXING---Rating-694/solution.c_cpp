@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void solve() {
+    int A, B, X, Y;
+    cin >> A >> B >> X >> Y;
+    
+   
+    if (B >= A - Y && B <= A + X) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
+}
+
+int main() {
+    
+    int T;
+    cin >> T;
+    while (T--) {
+        solve();
+    }
+    return 0;
+}
