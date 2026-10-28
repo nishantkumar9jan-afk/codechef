@@ -66,10 +66,10 @@ BBBBAAAAABBBBBBB
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T15:54:11.642Z  
+**Submitted:** 2026-10-28T15:55:56.359Z  
 
 ```c_cpp
-```cpp
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -83,18 +83,21 @@ int main() {
         cin >> N >> S;
 
         int count = 0, ans = 0;
+        char prev = '\0';
 
         for (int i = 0; i < N; i++) {
-            count++;
-
-            if (i + 1 < N && S[i] != S[i + 1]) {
+            if (S[i] != prev) {
                 count = 0;
             }
+
+            count++;
 
             if (count == 3) {
                 ans++;
                 count = 0;
             }
+
+            prev = S[i];
         }
 
         cout << ans << endl;
