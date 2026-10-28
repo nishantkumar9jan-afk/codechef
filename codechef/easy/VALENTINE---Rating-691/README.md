@@ -56,23 +56,21 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-27T14:54:48.869Z  
+**Submitted:** 2026-10-28T03:58:29.418Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    // Fast I/O
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    
 
     int t;
     cin >> t;
     while (t--) {
         int x, y;
         cin >> x >> y;
-        // The maximum chocolates Chef can buy is X divided by Y
+        
         cout << x / y << "\n";
     }
 
