@@ -67,10 +67,10 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T16:05:06.444Z  
+**Submitted:** 2026-10-28T16:05:26.778Z  
 
 ```c_cpp
-```cpp
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -99,7 +99,6 @@ int main() {
 
     return 0;
 }
-```
 
 ```
 
