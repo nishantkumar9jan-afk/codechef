@@ -67,16 +67,39 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-28T16:04:57.592Z  
+**Submitted:** 2026-10-28T16:05:06.444Z  
 
 ```c_cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-	// your code goes here
+    int T;
+    cin >> T;
 
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<long long> A(N);
+
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];
+        }
+
+        long long ans = A[N - 1] - A[N - 2];
+
+        for (int i = 0; i < N - 2; i++) {
+            ans += abs(A[i]);
+        }
+
+        cout << ans << '\n';
+    }
+
+    return 0;
 }
+```
 
 ```
 
