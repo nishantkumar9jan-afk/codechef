@@ -57,16 +57,13 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-02T17:01:05.149Z  
+**Submitted:** 2026-11-03T14:05:36.309Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    // Fast I/O
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
 
     int t;
     cin >> t;
@@ -78,7 +75,6 @@ int main() {
         for(int i = 0; i < n; i++) {
             int age;
             cin >> age;
-            // Check if the age is between 10 and 60, inclusive
             if(age >= 10 && age <= 60) {
                 eligible_count++;
             }
