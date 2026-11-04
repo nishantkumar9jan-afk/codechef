@@ -51,21 +51,24 @@ YES
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-03T14:06:32.409Z  
+**Submitted:** 2026-11-04T10:13:55.174Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int T;
     cin >> T;
     while (T--) {
         int X, Y, D;
         cin >> X >> Y >> D;
 
-        
+        // Check if the absolute difference is less than or equal to D
         if (abs(X - Y) <= D) {
             cout << "YES\n";
         } else {
