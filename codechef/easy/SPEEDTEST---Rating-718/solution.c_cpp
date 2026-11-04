@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t; 
+    cin >> t;
+    while (t--) {
+        int a, x, b, y; 
+        cin >> a >> x >> b >> y;
+        
+        // Compare A/X and B/Y by cross-multiplying: A*Y vs B*X
+        if (a * y == b * x) {
+            cout << "EQUAL\n";
+        } else if (a * y < b * x) {
+            cout << "BOB\n";
+        } else {
+            cout << "ALICE\n";
+        }
+    }
+    return 0;
+}
