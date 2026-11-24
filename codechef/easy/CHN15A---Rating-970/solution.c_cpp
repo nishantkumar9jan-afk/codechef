@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Fast I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        
+        int wolverine_count = 0;
+        for (int i = 0; i < n; i++) {
+            int characteristic_value;
+            cin >> characteristic_value;
+            
+            // Check if the transmogrified value is divisible by 7
+            if ((characteristic_value + k) % 7 == 0) {
+                wolverine_count++;
+            }
+        }
+        
+        cout << wolverine_count << "\n";
+    }
+
+    return 0;
+}
