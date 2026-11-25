@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int T;
+    if (!(cin >> T)) return 0;
+
+    while (T--) {
+        int N;
+        cin >> N;
+
+        vector<long long> A(N);
+        long long total_sum = 0;
+        long long max_val = 0;
+
+        for (int i = 0; i < N; ++i) {
+            cin >> A[i];
+            total_sum += A[i];
+            if (A[i] > max_val) {
+                max_val = A[i];
+            }
+        }
+
+        // Case 1: Perform 0 operations (no doubling)
+        long long ans = total_sum - max_val;
+
+        // Case 2: Double one element A[i] -> 2 * A[i]
+        for (int i = 0; i < N; ++i) {
+            long long new_total = total_sum + A[i];
+            long long new_max = max(max_val, 2 * A[i]);
+            ans = max(ans, new_total - new_max);
+        }
+
+        cout << ans << '\n';
+    }
+
+    return 0;
+}
